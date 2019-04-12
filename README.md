@@ -10,12 +10,6 @@ The magnetic compass sensor orients the device and magnetic declination is added
 - Scaleable platform can be reprogrammed to find the direction to any point of interest. 
 - With a slight change of software, can be modified for use in multiple applications.
 
-\\
-\\
-\\
-\\
-\\
+___
 
-Made | By | Saad | Fahad | Abderahman
---- | --- | --- | --- | --- | --- 
---- | --- | --- | --- | --- | ---
+Made  | by  | Saad  | Fahad  | Abderahman
