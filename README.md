@@ -8,5 +8,5 @@ The magnetic compass sensor orients the device and magnetic declination is added
 
 - Specifically built for finding the direction of the Qibla.
 - Scaleable platform can be reprogrammed to find the direction to any point of interest. 
-- With a slight change of software, this prototype can be modified for use in multiple applications.
+- With a slight change of software, can be modified for use in multiple applications.
 
