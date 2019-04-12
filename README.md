@@ -12,7 +12,7 @@ The magnetic compass sensor orients the device and magnetic declination is added
 
 
 
->######Made by 
+######Made by 
 >>`Saad`  
 >>>`Fahad`  
 >>>>`Abderahman`
