@@ -16,4 +16,6 @@ The magnetic compass sensor orients the device and magnetic declination is added
 \\
 \\
 
-by: _Abderahman Jimenez, Fahad Akhtar and Saad Zakaria_
+Made | By | Saad | Fahad | Abderahman
+--- | --- | --- | --- | --- | --- 
+--- | --- | --- | --- | --- | ---
