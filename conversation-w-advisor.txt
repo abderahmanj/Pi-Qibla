@@ -1,7 +1,9 @@
-so, a question arose where he was asking how we got the info needed to calculate declination. considering we are saying that this device does not rely on cellular or wi-fi (i transcribed the questions he was asking lol): 
+so, a question arose where he was asking how we got the info needed to calculate declination. 
+considering we are saying that this device does not rely on cellular or wi-fi 
+(i transcribed the questions he was asking lol): 
 
 look up table?
-is it residing memory?
+is it residing in memory?
 is it a large file, bcz you need it for many locations, right?
 how do you get this info?
 is it residing on the device or do you have to connect to a network?
