@@ -1,0 +1,24 @@
+add this to the main code explanation:
+
+To extract from the string:
+		#input is incoming GPS data
+msg = pynmea2.parse(data) 
+#which will parse the latitude and print (using a library) and store in message object
+latval = float(msg.lat)/100 
+#msg.lat calls on the latitude data part of the string
+#latval takes latitude from message object, converts to a float, and turns it into numeric form
+(lat='1929.045', lat_dir='S', lon='02410.506', lon_dir='E',...)
+
+Later in the function, an ‘if’ statement calls the latitude direction from the data string. A compass reads from -180 to 180 degrees. Latitude and longitude are specified in quadrants using N, S, E, W.   S and W coordinates read in the negative. The following code is added to address these concerns:
+
+if msg.lat_dir == "S":
+                     latval = latval * -1
+              print(msg.lon_dir)
+              if msg.lon_dir == "W":
+                     longval = longval * -1
+
+
+----- We tested for accuracy locally and in varying environment and monitored it’s stability.
+
+
+
