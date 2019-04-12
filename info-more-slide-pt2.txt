@@ -1,0 +1,18 @@
+slide12: flowchart which maps algorithm of test server
+slide13: output of test server in test mode
+	 note: red boxes show the parts of the GPS string of interest. the lat and lon and their corresponding direction. on the bottom we can see the equation calculation result using the GPS input coordinates. which is 58.23 degrees from true north.
+
+
+-gps retrieves data string
+--extract lat and long along with their corresponding directions which determines (+) or (-) values
+
+-gps coordinates are the inputs for spherical triangle equation, which returns the direction of the Qibla in degrees from TN 
+
+-get compass direction
+--the compass is used to orient the device, the compass points to magnetic north
+
+-apply geomag module to determine the MD for our current coordinates
+--MD is applied to the compass heading to adjust it to point to TN instead of MN
+
+-a final heading is determined by adding a (-) declination to heading or by subtracting a (+) decination to heading
+

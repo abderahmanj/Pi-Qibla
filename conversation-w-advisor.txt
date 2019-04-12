@@ -1,0 +1,21 @@
+so, a question arose where he was asking how we got the info needed to calculate declination. considering we are saying that this device does not rely on cellular or wi-fi (i transcribed the questions he was asking lol): 
+
+look up table?
+is it residing memory?
+is it a large file, bcz you need it for many locations, right?
+how do you get this info?
+is it residing on the device or do you have to connect to a network?
+so you need a connection right?
+so do you have the whole globe in memory here?
+so i have to connect to a network right?
+ok but where is the data residing?
+somewhere in the cloud?
+--Im asking a simple question
+is it stored in the memory for the whole globe?
+so you need to connect to something right?
+well then how do you do it?
+--people will ask
+once you download it and have it, then dont have to worry about it?
+--this is a very elementary question
+--if you are claiming that it is self contained then it has to correspond with you claim
+

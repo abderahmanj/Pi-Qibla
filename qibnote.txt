@@ -1,0 +1,99 @@
+qib steps:
+
+testing GPS w Pi: 
+http://wiki.dragino.com/index.php?title=Getting_GPS_to_work_on_Raspberry_Pi_3_Model_B
+
+	transfer files: 	http://www.mindsensors.com/blog/how-to/transfer-		files-to-raspberry-pi
+
+ https://circuitdigest.com/microcontroller-projects/raspberry-pi-3-gps-module-interfacing
+^^describes GPGGA string
+
+"The dtoverlay=pi3-disable-bt disconnects the bluetooth from the ttyAMA0, this is to allow us access to use the full UART power available via ttyAMAO instead of the mini UART ttyS0."
+
+sudo python gpstest.py
+sudo python compasstest.py
+python qibla_direction.py
+
+https://github.com/adafruit/Adafruit_Python_LSM303/blob/master/examples/simpletest.py (compasstest.py)
+
+https://learn.adafruit.com/lsm303-accelerometer-slash-compass-breakout?view=all#computing-a-compass-heading-3-5
+---In the absence of any strong local magnetic fields, the sensor readings should reflect the magnetic field of the earth (between 20 and 60 micro-Teslas). 
+When the sensor is held level, by calculating the angle of the magnetic filed with respect to the X and Y axis, the device can be used as a compass.
+
+Computing a Compass Heading:
+To convert the microTesla readings into a 0-360 degree compass heading, we can use the atan2() function to compute the angle of the vector defined by the Y and X axis readings. The result will be in radians, so we multiply by 180 degrees and divide by Pi to convert that to degrees.
+
+How GPS works.. 481 textbook edition 3, pg413 (pdf_pg429)
+-------------------------------------
+Fri 10/19
+https://learn.adafruit.com/adafruit-pitft-3-dot-5-touch-screen-for-raspberry-pi/easy-install-2
+
+https://learn.adafruit.com/assets/26348
+
+** Run sudo raspi-config Choose option 7 from the menu, then option A6. That lets you disable pixel-doubling. 
+
+http://ozzmaker.com/compass1/
+--------------------------------------
+Sat 10/20
+To Do List:
+while true(
+get data from compass and gps
+--compass -> geopy -> degrees from true north
+--degrees from true north, gps -> function -> direction to qibla based on the current gps + degrees from true north
+--print direction to point on screen
+)
+
+tried adding "heading" to code. compass readings were erratic. used many different tutorials to fix but were unable. used: https://bitbucket.org/shigeru_kawaguchi/adafruit_lsm303_for_rpi)
+
+we stopped after a few hours. will research and under stand -->(https://github.com/praneshkmr/node-lsm303/wiki/Understanding-the-calibration-of-the-LSM303-magnetometer-(compass))
+	``	and on wednesday we will add a code to calibrate, remove all the exerimental code and try again. 
+
+-----------------------------------
+shigeru_kawaguchi-adafruit_lsm303_for_rpi-1f00d5bde4dc.zip
+Adafruit_LSM303DLHC.py
+"However, note that 'heading' isn't computing what I hoped."
+
+"Regarding to the heading data, it is using Python's arctangent for X and Y and it supposed to give in range of -180 to 180. Since tangent becomes infinity at 90 degrees, may be it is causing division by zero error." 
+
+"I found a fix to the heading issue I think.
+In the function readMagneticHeading, it does:
+magData = self.readMagnetics()
+
+Instead if I do:
+magData = self.readMagneticsGauss()
+
+It gives me a better reading from -180 to 180."
+
+Sat 11/3
+
+
+Sun 11/4
+added this: coords = [coords[0]*(math.pi/180), coords[1]*(math.pi/180)]
+referred to: https://github.com/Knio/pynmea2
+and added direction conditions:
+if msg.lat_dir == "s":
+	latval = latval * -1
+print(msg.lon_dir)
+if msg.lon_dir == "W"
+	longval = longval * -1
+ie. msg.lat_dir pulls directional info for latitude from string
+
+Added conditional statement to that converts the coordinate direction into a positive/negative value so it could be used in the qibla equation for the correct degrees to Mecca from true north.
+
+good reference: https://cdn-learn.adafruit.com/downloads/pdf/adafruit-ultimate-gps.pdf
+
+--->restarting Compass: 
+currently using but not working: https://github.com/DavidEGrayson/minimu9-ahrs/wiki
+official: https://github.com/adafruit/Adafruit_CircuitPython_LSM303
+--https://learn.adafruit.com/lsm303-accelerometer-slash-compass-breakout
+--https://bitbucket.org/shigeru_kawaguchi/adafruit_lsm303_for_rpi/downloads
+
+11/10 Sat:
+
+sudo apt-get remove --purge libreoffice*
+ 
+wolfram-engine scratch minecraft-pi sonic-pi dillo gpicview penguinspuzzle oracle-java8-jdk openjdk-7-jre oracle-java7-jdk openjdk-8-jre
+
+sudo apt-get clean
+sudo apt-get autoremove
+
