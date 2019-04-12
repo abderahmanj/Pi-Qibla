@@ -1,4 +1,4 @@
-## Pi-Qibla
+## Pi-Qibla 3000
 
 The Stand-Alone Qibla Direction Finder is a portable device enabling a user to determine the direction of the Qibla, 
 or the proper orientation to face the Kaaba in Mecca, Saudi Arabia. 
